@@ -2,6 +2,7 @@
 #define __DEFINITONS_H__
 
 #include <stdio.h>
+#include <string.h>
 
 typedef enum{GROUND=0,FIRST,SECOND,THIRD,FOUR,FIVE} FLOOR;
 
