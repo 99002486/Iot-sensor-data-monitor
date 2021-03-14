@@ -31,4 +31,6 @@ int room_temp_ac_state_func(sensor_data_t* sensor_data_array,sensor_data_t* room
 
 sensor_data_t* highest_power_room_func(sensor_data_t* sensor_data_array);
 
+sensor_data_t* highest_temp_room_func(sensor_data_t* sensor_data_array);
+
 #endif

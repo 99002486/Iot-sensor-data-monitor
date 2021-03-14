@@ -21,7 +21,11 @@ int main(){
 
     sensor_data_t* highest_power_room; 
     highest_power_room=highest_power_room_func(sensor_data_array);
-    printf("high temp reg");
     printf("high pc room: %d\n",highest_power_room->room_no);
+
+    sensor_data_t* highest_temp_room; 
+    highest_temp_room=highest_temp_room_func(sensor_data_array);
+    printf("high temp room: %d\n",highest_temp_room->room_no);
+
     return 0;
 }
