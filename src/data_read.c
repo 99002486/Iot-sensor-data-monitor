@@ -1,8 +1,11 @@
 #include "definitions.h"
-int init_sensor_array(sensor_data_t* array_pointer)
+sensor_data_t* init_sensor_array()
 {
+    sensor_data_t* array_pointer;
     array_pointer = calloc(NO_OF_ENTRIES,sizeof(sensor_data_t));
-    return 0;
+    if(array_pointer==NULL)
+        printf("not allocated");
+    return array_pointer;
 }
 
 FLOOR which_floor(char* floor_data)
@@ -38,14 +41,12 @@ int sensor_data_read(sensor_data_t* sensor_data_array, FILE* sensor_data_file)
         // Splitting the data 
         char* data = strtok(buffer, ", "); 
         
-        while (data ) { 
+        while (data) { 
             switch(column)
             {
                 case 0:
-                    char floor_str[10];
-                    floor_str=data;
-                    sensor_data_array[row].floor=which_floor(floor_str);
-                    printf("floor: %d ",sensor_data_array[row].floor);
+                    sensor_data_array[row].floor=which_floor(data);
+                    printf("floor_data: %d ",sensor_data_array[row].floor);
                     break;
                 case 1:
                     sensor_data_array[row].room_no=atoi(data);
@@ -53,7 +54,7 @@ int sensor_data_read(sensor_data_t* sensor_data_array, FILE* sensor_data_file)
                     break;
                 case 2:
                     sensor_data_array[row].power_consumption=atof(data);
-                    printf("pc: %.2f ",sensor_data_array[row].power_consumption;
+                    printf("pc: %f ",sensor_data_array[row].power_consumption);
                     break;
                 case 3:
                     sensor_data_array[row].ac_state=(!strcmp(data,"ON"))?ON:OFF;
@@ -61,7 +62,7 @@ int sensor_data_read(sensor_data_t* sensor_data_array, FILE* sensor_data_file)
                     break;
                 case 4:
                     sensor_data_array[row].room_temp=atof(data);
-                    printf("roomtemp: %.2f \n",sensor_data_array[row].room_temp;
+                    printf("roomtemp: %.2f \n",sensor_data_array[row].room_temp);
                     break;
                 default:
                     printf("invalid column\n");
@@ -71,13 +72,10 @@ int sensor_data_read(sensor_data_t* sensor_data_array, FILE* sensor_data_file)
             
             column++; // incrementing column for next structure member
             
-        } 
-        
+        }     
         column=0;  //Again reintialize column value to zero for next row
         row++;      //Incrementing row for next array index 
     } 
 
-    
-    // Close the file 
-    fclose(fp); 
+    return 0; 
 }
