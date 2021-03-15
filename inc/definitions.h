@@ -33,4 +33,6 @@ sensor_data_t* highest_power_room_func(sensor_data_t* sensor_data_array);
 
 sensor_data_t* highest_temp_room_func(sensor_data_t* sensor_data_array);
 
+float sort_with_power(sensor_data_t* sensor_data_array,sensor_data_t* sorted_array);
+
 #endif

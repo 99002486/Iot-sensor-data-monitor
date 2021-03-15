@@ -15,6 +15,11 @@ int main(){
     
     room_ac_on_array=init_sensor_array();
     room_count=room_ac_on_func(sensor_data_array,room_ac_on_array);
+    for(int i=0;i<NO_OF_ENTRIES;i++)
+    {
+        printf("state: %d",room_ac_on_array[i].room_no);
+    }
+    printf("\n");
 
     room_temp_ac_array=init_sensor_array();
     room_count=room_temp_ac_state_func(sensor_data_array,room_temp_ac_array,THRESHOLD_TEMP);
@@ -26,6 +31,15 @@ int main(){
     sensor_data_t* highest_temp_room; 
     highest_temp_room=highest_temp_room_func(sensor_data_array);
     printf("high temp room: %d\n",highest_temp_room->room_no);
+
+    sensor_data_t* sorted_data_array;
+    float highest_temp;
+    sorted_data_array=init_sensor_array();
+    highest_temp=sort_with_power(sensor_data_array,sorted_data_array);
+    for(int i=0;i<NO_OF_ENTRIES;i++)
+    {
+        printf("temp: %.2f",sorted_data_array[i].room_temp);
+    }
 
     return 0;
 }
