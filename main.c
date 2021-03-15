@@ -1,4 +1,5 @@
 #include "definitions.h"
+#include "functions.h"
 
 int main(){
     sensor_data_t* sensor_data_array=NULL;
