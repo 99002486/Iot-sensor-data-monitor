@@ -1,7 +1,8 @@
 PROJECT_NAME = iot_sensor_data_monitor
 
 SRC = main.c \
-src/data_read.c
+src/data_read.c \
+src/functions.c
 
 INC = -Iinc
 
