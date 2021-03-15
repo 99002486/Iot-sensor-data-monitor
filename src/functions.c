@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "functions.h"
 
 int room_ac_on_func(sensor_data_t* sensor_data_array,sensor_data_t* room_ac_array)
 {

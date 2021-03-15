@@ -32,7 +32,7 @@ int main(){
     highest_temp_room=highest_temp_room_func(sensor_data_array);
     printf("high temp room: %d\n",highest_temp_room->room_no);
 
-    sensor_data_t* sorted_data_array;
+    sensor_data_t* sorted_data_array=NULL;
     float highest_temp;
     sorted_data_array=init_sensor_array();
     highest_temp=sort_with_power(sensor_data_array,sorted_data_array);
