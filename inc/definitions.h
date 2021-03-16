@@ -20,15 +20,19 @@ typedef enum{GROUND=0,FIRST,SECOND,THIRD,FOURTH,FIFTH} FLOOR;
  */
 typedef enum{OFF=0,ON} AC_STATE;
 /**
- * @struct sensor_data_t - struct to hold the data specifiec from the sensor.csv
- * @members     - floor,room number,power consumption, ac state, room temperature
+ * @struct sensor_data - struct to hold the data specifiec from the sensor.csv
  */      
 typedef struct sensor_data{
+    /**enum to hold floor*/
     FLOOR floor;
+    /**int to hold room_no*/                
     int room_no;
+    /**float to hold power consumption*/                
     float power_consumption;
+    /**enum to hold state of the ac*/    
     AC_STATE ac_state;
-    float room_temp;
+    /**float to hold the room temperature*/          
+    float room_temp;            
 }sensor_data_t;
 
 #endif

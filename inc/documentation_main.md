@@ -1,0 +1,1 @@
+@mainpage Iot Sensor Data Read and Analyzer by Minand N M @subpage definitons.h @subpage functions.c
